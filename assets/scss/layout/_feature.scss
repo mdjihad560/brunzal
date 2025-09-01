@@ -1,0 +1,109 @@
+@use '../utils' as *;
+
+/*=============================
+    Feature 01
+===============================*/
+.feature-card {
+    .box-icon {
+        border-radius: 10px;
+        background: var(--tg-color-smoke);
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba($color: #4F5158, $alpha: 0.1);
+        margin-bottom: 20px;
+        svg {
+            transition: 0.4s;
+        }
+    }
+    .box-title {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.333;
+        margin-top: -0.3em;
+    }
+    .box-text {
+        font-size: 14px;
+        margin-bottom: -0.4em;
+    }
+    &:hover {
+        .box-icon {
+            svg {
+                transform: scale(-1) rotate(-180deg);
+            }
+        }
+    }
+    @media #{$lg} {
+        text-align: center;
+    }
+}
+
+.special-feature-thumb1 {
+    margin-right: -330px;
+    @media #{$xxl} {
+        margin-right: -100px;
+    }
+    @media #{$lg} {
+        margin-right: 0;
+    }
+}
+
+.feature-card2 {
+    background: linear-gradient(233.65deg, #C2C20F 20.16%, #0F29BE 91.39%);
+    box-shadow: 0px 1px 2px rgba(20, 56, 181, 0.25), 0px 0px 1px #1438B5;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 35px;
+    .box-icon {
+        margin-bottom: 24px;
+    }
+    .box-title {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 20px;
+        color: var(--tg-color-white-default);
+    }
+    .box-text {
+        color: var(--tg-color-white-default);
+        margin-bottom: 20px;
+    }
+    .box-btn {
+        display: inline-block;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--tg-color-white-default);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 1px 14px;
+        &:hover {
+            background: var(--tg-theme-primary);
+        }
+    }
+}
+.feature-card3 {
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 1px 2px rgba(3, 4, 28, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    .box-img {
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        margin-bottom: 32px;
+        img {
+            width: 100%;
+        }
+    }
+    .box-title {
+        color: var(--tg-color-white-default);
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.35em;
+    }
+}

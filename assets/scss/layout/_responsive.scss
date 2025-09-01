@@ -1,0 +1,16 @@
+@use '../utils' as *;
+
+/*=============================
+    Responsive 01
+===============================*/
+.responsive-area-1 {
+    background: linear-gradient(180deg, #EBEBD5 0%, #FFFFFF 100%);
+}
+.responsive-thumb {
+    position: relative;
+    .responsive-icon {
+        position: absolute;
+        top: 0;
+        right: -70px;
+    }
+}

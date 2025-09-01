@@ -1,0 +1,135 @@
+@use '../utils' as *;
+
+/*=============================
+    39. Footer
+===============================*/
+.footer {
+    &__area-one {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        --tg-body-color: #859794;
+        padding: 220px 0 300px;
+        
+        .footer-checklist {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px 60px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 40px;
+            li {
+                color: var(--tg-color-white-default);
+                display: flex;
+                gap: 14px;
+                font-weight: 500;
+            }
+        }
+        .bottom-text h2 {
+            font-size: 460px;
+            font-weight: 800;
+            background: linear-gradient(180deg, #FFFFFF -41.93%, rgba(255, 255, 255, 0) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            position: absolute;
+            bottom: -96px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            line-height: 0.73;
+            margin-bottom: 0;
+            @media #{$xxl} {
+                font-size: 300px;
+                bottom: -36px;
+            }
+            @media #{$lg} {
+                font-size: 250px;
+            }
+            @media #{$md} {
+                font-size: 200px;
+            }
+            @media #{$xs} {
+                font-size: 100px;
+                bottom: 0;
+            }
+            @media #{$vxs} {
+                font-size: 90px;
+            }
+            @media #{$sm} {
+                font-size: 130px;
+            }
+        }
+        .footer__copyright {
+            padding-bottom: 118px;
+            overflow: hidden;
+            @media #{$xs} {
+                padding-bottom: 100px;
+            }
+        }
+        .footer__bottom.text-center {
+            overflow: hidden;
+        }
+    } 
+}
+
+.footer-image-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    .footer-image {
+        border-radius: 4px;
+        overflow: hidden;
+        display: inline-block;
+        position: absolute;
+        width: 300px;
+        @media #{$xl} {
+            width: 250px;
+        }
+        @media #{$md} {
+            width: 200px;
+        }
+        @media #{$xs} {
+            width: 150px;
+        }
+    }
+    .footer-image-1 {
+        top: 350px;
+        right: 60px;
+        @media #{$xxl} {
+            right: -30px;
+        }
+        @media #{$md} {
+            top: auto;
+            bottom: 200px;
+        }
+    }
+    .footer-image-2 {
+        right: 170px;
+        top: 70px;
+        @media #{$xxl} {
+            right: 70px;
+        }
+        @media #{$xl} {
+            right: 20px;
+            top: 40px;
+        }
+    }
+    .footer-image-3 {
+        left: 34px;
+        top: 34px;
+        @media #{$vxs} {
+            left: -25px;
+        }
+    }
+    .footer-image-4 {
+        left: 100px;
+        bottom: 190px;
+        @media #{$md} {
+            left: 30px;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+@use '../utils' as *;
+
+/*=============================
+    13. Banner
+===============================*/
+/*hero 1****************/
+.hero-1 {
+    background: var(--tg-heading-color);
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .hero-content {
+        padding: 330px 0 220px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        @media #{$ml} {
+            padding: 300px 0 200px;
+        }
+        @media #{$xl} {
+            padding: 250px 0 150px;
+        }
+        @media #{$md} {
+            padding: 200px 0 150px;
+        }
+        @media #{$xs} {
+            padding: 170px 0 120px;
+        }
+    }
+    .sub-title {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--tg-theme-secondary);
+        margin-bottom: 25px;
+        @media #{$md} {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    }
+    .hero-title {
+        font-size: 80px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 42px;
+        line-height: 1.125em;
+        color: var(--tg-color-white-default);
+        @media #{$ml} {
+            font-size: 70px;
+        }
+        @media #{$xl} {
+            font-size: 60px;
+        }
+        @media #{$lg} {
+            font-size: 50px;
+        }
+        @media #{$md} {
+            font-size: 40px;
+        }
+        @media #{$xs} {
+            font-size: 38px;
+        }
+    }
+    .hero-bottom-wrap {
+        display: flex;
+        align-items: center;
+        gap: 55px;
+    }
+}
+.hero-image-feature {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    @media #{$xs} {
+        display: none;
+    }
+    .hero-image {
+        border-radius: 4px;
+        overflow: hidden;
+        display: inline-block;
+        position: absolute;
+        @media #{$xxl} {
+            width: 300px;
+        }
+        @media #{$xl} {
+            width: 250px;
+        }
+        @media #{$md} {
+            width: 200px;
+        }
+        @media #{$xs} {
+            width: 150px;
+        }
+    }
+    .hero-image-1 {
+        bottom: 70px;
+        left: 80px;
+        @media #{$md} {
+            left: 40px;
+        }
+    }
+    .hero-image-2 {
+        left: -50px;
+        top: 210px;
+    }
+    .hero-image-3 {
+        right: -200px;
+        top: 165px;
+        @media #{$ml} {
+            right: -100px;
+        }
+        @media #{$lg} {
+            right: 20px;
+            top: 120px;
+        }
+    }
+    .hero-image-4 {
+        right: 40px;
+        top: 295px;
+        @media #{$lg} {
+            right: -40px;
+        }
+    }
+    .hero-image-5 {
+        right: -58px;
+        bottom: 38px;
+        @media #{$lg} {
+            right: 20px;
+        }
+    }
+}

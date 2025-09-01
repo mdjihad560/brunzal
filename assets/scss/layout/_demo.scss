@@ -1,0 +1,77 @@
+@use '../utils' as *;
+
+/*=============================
+    Demo area
+===============================*/
+.demo-card {
+    border-radius: 15px;
+    border: 1px solid rgba(22, 22, 19, 0.18);
+    box-shadow: 0px 15px 40px -15px rgba(42, 42, 42, 0.18);
+    background: var(--tg-color-white-default);
+    padding: 20px;
+    .box-img {
+        border: 1px solid rgba($color: #161613, $alpha: 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        display: block;
+        img {
+            width: 100%;
+        }
+    }
+    .box-content {
+        margin-top: 25px;
+        text-align: center;
+        .box-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+    }
+}
+
+.inner-wrap {
+    position: relative;
+    &:after {
+        content: '';
+        inset: 50% 0 0 0;
+        position: absolute;
+        background: linear-gradient(360deg, #00240E 4%, rgba(0, 36, 14, 0) 100%);
+    }
+    .inner-content {
+        height: 1000px;
+        overflow: hidden;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &::-webkit-scrollbar-track {
+            display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            display: none;
+        }
+    }
+    .inner-wrap-text {
+        font-size: 30px;
+        font-weight: 600;
+        font-style: italic;
+        font-family: var(--tg-highlight-font-family);
+        letter-spacing: 0.04em;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 80px;
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 0;
+    }
+}
+.inner-card {
+    .box-img {
+        display: block;
+        box-shadow: 0px 20px 50px -10px rgba(0, 0, 0, 0.5);
+        img {
+            width: 100%;
+        }
+    }
+}

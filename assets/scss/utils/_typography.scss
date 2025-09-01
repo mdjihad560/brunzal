@@ -1,0 +1,50 @@
+
+// Font URL
+$font-url: 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
+
+// Font Family
+$theme-fonts: (
+    body: (
+        font-family: "'DM Sans', serif;",
+    ),
+    heading: (
+        font-family: "'DM Sans', serif;",
+    ),
+    highlight: (
+        font-family: "'DM Sans Display', serif;",
+    ),
+    icon: (
+        font-family: '"Font Awesome 5 Free"',
+    )
+);
+
+
+// Font Size
+$font-size: (
+    body: (
+        font-size: 16px,
+    ),
+);
+
+
+// Line Height
+$theme-lh: (
+    body: (
+        line-height: 30px,
+    ),
+    heading: (
+        line-height: 1.1,
+    ),
+);
+
+// Font Weight
+$font-weight: (
+    fw: (
+        extra-bold: 800,
+        bold: 700,
+        semi-bold: 600,
+        medium: 500,
+        regular: 400,
+        light: 300,
+    ),
+);

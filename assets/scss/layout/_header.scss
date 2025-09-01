@@ -1,0 +1,322 @@
+@use '../utils' as *;
+
+/*=============================
+	11. Header
+===============================*/
+.transparent-header {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    z-index: 9;
+    height: auto;
+}
+.tg-header {
+    &__area {
+        background-color: transparent;
+        border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.15);
+        @media #{$md} {
+            padding: 15px 0;
+        }
+        .tgmenu__navbar-wrap > ul > li a {
+            padding: 44.5px 0px;
+        }
+        &-one {
+            .tgmenu__wrap {
+                .tgmenu__nav {
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+.tgmenu {
+    &__nav {
+        @include flexbox();
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        @media #{$md} {
+            justify-content: space-between;
+        }
+        & .logo {
+            & img {
+                max-height: 40px;
+            }
+        }
+        
+        .tgmenu__action {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+    &__navbar-wrap {
+        @include flexbox();
+        flex-grow: 1;
+        & > ul {
+            @include flexbox();
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0 0;
+            margin: 0 auto;
+            @media #{$lg} {
+                margin-right: 0;
+            }
+            & > li {
+                list-style: none;
+                display: block;
+                position: relative;
+                margin-right: 50px;
+                @media #{$lg} {
+                    margin-right: 45px;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                & a {
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    color: var(--tg-color-white-default);
+                    padding: 55px 0px;
+                    display: flex;
+                    line-height: 1;
+                    position: relative;
+                    z-index: 1;
+                    font-family: var(--tg-body-font-family);
+                }
+                & .sub-menu {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    min-width: 230px;
+                    background: var(--tg-color-smoke);
+                    margin: 0;
+                    @include transform(scale(1, 0));
+                    transform-origin: 0 0;
+                    @include transition(0.3s);
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);                  
+                    border-radius: 0 0 6px 6px;
+                    padding: 18px 0;
+                    display: block;
+                    visibility: hidden;
+                    opacity: 0;
+                    z-index: 9;
+                    & .sub-menu {
+                        right: auto;
+                        left: 100%;
+                        top: 0;
+                    }
+                    & > li {
+                        margin-left: 0;
+                        text-align: left;
+                        display: block;
+                        & a {
+                            padding: 7px 15px 7px 25px;
+                            line-height: 1.45;
+                            display: block;
+                            color: var(--tg-heading-color);
+                            text-transform: capitalize;
+                        }
+                        &:hover > a,
+                        &.active > a {
+                            color: var(--tg-theme-primary);
+                        }
+                        &:hover > a {
+                            @include transform(translateX(8px));
+                        }
+                    }
+                }
+                &:hover > .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scale(1);
+                }
+            }
+        }& > ul {
+            & > li {
+                &.active,
+                &:hover {
+                    & a {
+                        color: var(--tg-theme-secondary);
+                    }
+                }
+            }
+        }
+    }
+    &__main-menu {
+        & li.menu-item-has-children {
+            & .dropdown-btn {
+                display: none;
+            }
+            & > a {
+                &::after {
+                    content: "\f107";
+                    font-weight: 700;
+                    font-family: var(--tg-icon-font-family);
+                    color: var(--tg-heading-color);
+                    margin-left: 4px;
+                    @include transition(.3s);
+                    line-height: 1;
+                    transform: translateY(0px);
+                }
+                &:hover {
+                    color: var(--tg-theme-primary);
+                }
+            }
+            &:hover {
+                & > a {
+                    &::after {
+                        color: var(--tg-theme-primary);
+                    }
+                }
+            }
+            &.active {
+                & > a {
+                    &::after {
+                        color: var(--tg-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+    &__action {
+        @media #{$md} {
+            margin-right: 25px;
+            margin-left: auto;
+        }
+        @media #{$vxs} {
+            margin-right: 15px;
+        }
+        & ul {
+            @include flexbox();
+            align-items: center;
+            & li {
+                position: relative;
+                margin-left: 40px;
+                @media #{$lg} {
+                    margin-left: 20px;
+                }
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            .search {
+                a {
+                    color: var(--tg-color-white-default);
+                }
+            }
+            & .header-btn {
+                margin-left: 25px;
+                @media #{$lg} {
+                    display: none;
+                }
+                & .btn {
+                    color: var(--tg-color-white-default);
+                    font-size: 16px;
+                    gap: 5px;
+                    padding: 17px 24px 15px 24px;
+                    background: linear-gradient(90deg, #80397E 5.39%, #9F59A4 100%);
+                    & i {
+                        line-height: 0;
+                        font-size: 18px;
+                        transform: translateY(-2px);
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+@media (max-width: 991.98px) {
+  .tgmenu__nav .tgmenu__action .sidebar-menu-wrap:hover svg {
+    color: var(--tg-color-white-default);
+  }
+}
+
+.sticky-menu {
+	position: fixed;
+	left: 0;
+	margin: auto;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	background: var(--tg-heading-color);
+	animation: 1000ms ease-in-out 0s normal none 1 running fadeInDown;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+	border-radius: 0;
+    & ul li .sub-menu {
+        @include border-radius(0 0 6px 6px);
+    }
+}
+
+
+
+
+#header {
+    &-fixed-height {
+        &.active-height {
+            display: block;
+            height: 115px;
+            @media #{$md} {
+                height: 90px;
+            }
+            @media #{$xs} {
+                height: 80px;
+            }
+            &.header-fixed-height-two {
+                height: 100px;
+                @media #{$md} {
+                    height: 90px;
+                }
+                @media #{$xs} {
+                    height: 80px;
+                }
+            }
+            &.header-fixed-height-three {
+                height: 61px;
+                @media #{$lg} {
+                    height: 90px;
+                }
+                @media #{$xs} {
+                    height: 80px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+// ============================================================ Language Drop down
+ul.dropdown-menu {
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 5px 5px;
+    border: 0;
+    box-shadow: 2px 2px 10px #00000014;
+}
+.dropdown-menu li a {
+    color: var(--tg-heading-color);
+    display: block;
+    background: transparent;
+    padding: 2px 15px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+.dropdown-menu li a:hover {
+    color: var(--tg-theme-primary);
+    background: var(--tg-color-smoke);
+    border-color: var(--tg-border-1);
+}
+

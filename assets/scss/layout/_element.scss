@@ -1,0 +1,50 @@
+@use '../utils' as *;
+
+/*=============================
+    Element 01
+===============================*/
+.element-title {
+    .number-title {
+        font-weight: 700;
+        font-size: 200px;
+        line-height: 14px;
+        letter-spacing: -0.02em;
+        line-height: 0.75;
+        background: url('../img/other/element-number-bg.png') center/cover no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        display: inline-block;
+        margin-bottom: 40px;
+        @media #{$lg} {
+            font-size: 120px;
+        }
+        @media #{$md} {
+            font-size: 100px;
+        }
+        @media #{$xs} {
+            font-size: 80px;
+        }
+    }
+}
+.element-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 0 -70px;
+    @media #{$xxl} {
+        margin: 0;
+    }
+    .element-item {
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        background: var(--tg-color-smoke);
+        padding: 15px 35px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+}
